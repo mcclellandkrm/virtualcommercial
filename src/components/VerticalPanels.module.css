@@ -1,0 +1,121 @@
+.section {
+  background: #f8fafc;
+  padding: 4rem 0 5rem 0;
+}
+.headlineBlock {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+.headline {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 1.2rem;
+}
+.description {
+  font-size: 1.25rem;
+  color: #334155;
+  max-width: 700px;
+  margin: 0 auto;
+}
+.panels {
+  display: flex;
+  flex-direction: row;
+  gap: 2.5rem;
+  justify-content: center;
+  align-items: stretch;
+  margin: 0 auto;
+  max-width: 1200px;
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+  box-sizing: border-box;
+}
+.panelIcon {
+  margin: 2.5rem auto 2rem auto;
+  display: block;
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+}
+.panel {
+  background: #0f3c4c;
+  color: #fff;
+  border-radius: 2rem;
+  box-shadow: 0 2px 16px rgba(30,41,59,0.08);
+  padding: 2.5rem 2rem 2.5rem 2rem;
+  min-width: 320px;
+  min-height: 480px;
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: relative;
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+  overflow: hidden;
+}
+.panelTitle {
+  font-size: 2.2rem;
+  font-weight: 600;
+  margin-bottom: 2.2rem;
+  color: #fff;
+  z-index: 2;
+  text-align: left;
+}
+.panelReveal {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(30px);
+  transition: opacity 0.3s, transform 0.3s;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 2.5rem;
+  padding: 0 2rem;
+  z-index: 1;
+  text-align: left;
+}
+.panelHovered .panelReveal,
+.revealVisible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+.panelSubtitle {
+  font-size: 1.18rem;
+  margin-bottom: 2.2rem;
+  color: #fff;
+  text-align: left;
+  min-height: 60px;
+}
+.panelButton {
+  background: #7be0c9;
+  color: #0f3c4c;
+  border: none;
+  border-radius: 1.5rem;
+  padding: 0.7rem 1.7rem;
+  font-size: 1.08rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(30,41,59,0.06);
+  transition: background 0.2s;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: auto;
+}
+.panelButton:hover {
+  background: #38a1db;
+  color: #fff;
+}
+@media (max-width: 900px) {
+  .panels {
+    flex-direction: column;
+    gap: 2rem;
+    max-width: 500px;
+  }
+  .panel {
+    min-width: 0;
+    width: 100%;
+  }
+}
